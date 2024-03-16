@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4jd0u3es1x4"]
+
+[ext_resource type="Script" path="res://AutoAttackOnStationary/redo_button.gd" id="1_djc5a"]
+
+[node name="DeathScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 211.0
+text = "You DEDZ"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 85.0
+offset_right = 685.0
+offset_bottom = 123.0
+text = "Redo!"
+script = ExtResource("1_djc5a")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

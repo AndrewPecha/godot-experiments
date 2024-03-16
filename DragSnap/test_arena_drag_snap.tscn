@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq0gllolh3vi5"]
+
+[ext_resource type="Script" path="res://DragSnap/snap_socket.gd" id="1_6l2uj"]
+[ext_resource type="Script" path="res://DragSnap/snap.gd" id="2_8sbkg"]
+[ext_resource type="Texture2D" uid="uid://cbc4uf3c4jjnf" path="res://Sprites/Projectile.png" id="3_omw6d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kv16b"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kw8xh"]
+radius = 12.0416
+
+[node name="TestArena" type="Node2D"]
+
+[node name="SnapSocket" type="Area2D" parent="."]
+position = Vector2(173, 68)
+script = ExtResource("1_6l2uj")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="SnapSocket"]
+modulate = Color(0, 0.745098, 0.392157, 1)
+texture_filter = 3
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("3_omw6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnapSocket"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_kv16b")
+
+[node name="Snap" type="CharacterBody2D" parent="."]
+position = Vector2(95, 65)
+input_pickable = true
+script = ExtResource("2_8sbkg")
+metadata/_edit_group_ = true
+
+[node name="Projectile" type="Sprite2D" parent="Snap"]
+texture_filter = 3
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("3_omw6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snap"]
+shape = SubResource("CircleShape2D_kw8xh")
+
+[connection signal="input_event" from="Snap" to="Snap" method="_on_input_event"]
+[connection signal="mouse_entered" from="Snap" to="Snap" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Snap" to="Snap" method="_on_mouse_exited"]

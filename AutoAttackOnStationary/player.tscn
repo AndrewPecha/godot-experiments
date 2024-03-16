@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://eiktb61u2fyp"]
+
+[ext_resource type="Script" path="res://AutoAttackOnStationary/player.gd" id="1_vt5ix"]
+[ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="2_diygd"]
+[ext_resource type="PackedScene" uid="uid://c1n8lsep2fvcs" path="res://weapon_1.tscn" id="4_kahua"]
+[ext_resource type="PackedScene" uid="uid://ck5vyi4a7rphd" path="res://AutoAttackOnStationary/health_bar.tscn" id="5_52tlh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yy5am"]
+bg_color = Color(0.933333, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_4esan"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_yy5am")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mtdv"]
+size = Vector2(42, 42)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_vt5ix")
+
+[node name="HealthBar" parent="." instance=ExtResource("5_52tlh")]
+offset_left = -38.0
+offset_top = -63.0
+offset_right = 213.0
+offset_bottom = 109.0
+scale = Vector2(0.4, 0.4)
+theme = SubResource("Theme_4esan")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.335938, 0.335938)
+texture = ExtResource("2_diygd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3mtdv")
+
+[node name="Weapon" parent="." instance=ExtResource("4_kahua")]

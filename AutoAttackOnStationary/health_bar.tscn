@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck5vyi4a7rphd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4qqk"]
+font_size = 25
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1.0
+offset_right = 251.0
+offset_bottom = 171.0
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 195.0
+offset_bottom = 71.0
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 193.0
+offset_bottom = 43.0
+text = "HEALTH"
+label_settings = SubResource("LabelSettings_u4qqk")
+horizontal_alignment = 1

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://db5fx23iatn17"]
+
+[ext_resource type="Script" path="res://AutoAttackOnStationary/projectile.gd" id="1_pmntf"]
+[ext_resource type="Texture2D" uid="uid://cbc4uf3c4jjnf" path="res://Sprites/Projectile.png" id="2_6f5ic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rn3a"]
+size = Vector2(14, 14)
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_pmntf")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_6f5ic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6rn3a")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
