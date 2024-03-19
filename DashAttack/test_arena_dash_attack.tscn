@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://caw7wt7llvgn"]
+
+[ext_resource type="Script" path="res://DashAttack/player_dash_attack.gd" id="1_hdfwv"]
+[ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="2_mh45d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uirn8"]
+size = Vector2(38, 38)
+
+[node name="TestArenaDashAttack" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(337, 249)
+script = ExtResource("1_hdfwv")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_mh45d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_uirn8")
