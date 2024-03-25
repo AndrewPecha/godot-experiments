@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://eiktb61u2fyp"]
+[gd_scene load_steps=9 format=3 uid="uid://eiktb61u2fyp"]
 
 [ext_resource type="Script" path="res://AutoAttackOnStationary/player.gd" id="1_vt5ix"]
 [ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="2_diygd"]
 [ext_resource type="PackedScene" uid="uid://c1n8lsep2fvcs" path="res://weapon_1.tscn" id="4_kahua"]
 [ext_resource type="PackedScene" uid="uid://ck5vyi4a7rphd" path="res://AutoAttackOnStationary/health_bar.tscn" id="5_52tlh"]
+[ext_resource type="PackedScene" uid="uid://demlgpc3vmcn0" path="res://AutoAttackOnStationary/weapon_2.tscn" id="5_j7534"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yy5am"]
 bg_color = Color(0.933333, 0, 0, 1)
@@ -33,3 +34,7 @@ texture = ExtResource("2_diygd")
 shape = SubResource("RectangleShape2D_3mtdv")
 
 [node name="Weapon" parent="." instance=ExtResource("4_kahua")]
+
+[node name="Weapon2" parent="." instance=ExtResource("5_j7534")]
+process_mode = 4
+visible = false

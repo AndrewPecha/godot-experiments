@@ -17,6 +17,8 @@ var state_counter: float = 0.0
 var speed: float = 1.0
 var direction_to_move: Vector2
 
+var damage_per_tick: int = 0
+
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
@@ -34,9 +36,18 @@ func _physics_process(delta: float) -> void:
 	
 	_attack_player()
 	_handle_state()
+	
+#handle continuous damage
+	current_health -= damage_per_tick
+	set_health_bar_value()
 
 
 func _on_area_entered(area: Area2D) -> void:
+	#check if area should do continuous damage
+	if "continuous_damage" in area and "damage" in area:
+		damage_per_tick += area.damage
+		return
+	
 	current_health -= 1
 	set_health_bar_value()
 	
@@ -77,3 +88,8 @@ func _attack_player():
 func set_health_bar_value():
 	($HealthBar/ProgressBar as ProgressBar).value = current_health
 	($HealthBar/Label as Label).text = str(($HealthBar/ProgressBar as ProgressBar).value)
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if "continuous_damage" in area and "damage" in area:
+		damage_per_tick -= area.damage
