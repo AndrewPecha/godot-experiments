@@ -8,7 +8,7 @@
 5. ~~Give the player health, gets hurt when enemy attacks~~
 5. ~~Have the enemy move~~
 6. ~~Move weapon into dedicated scene~~
-7. Have the weapon swappable
+7. ~~Have the weapon swappable~~
 8. Weapon that charges while not firing, shoots larger bullet to a max
    1. Create a "charge" bar
 9. Weapon that only shoots when moving
