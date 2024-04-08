@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://2othmv1anhas"]
+
+[ext_resource type="Script" path="res://BulletHellper/bh_spawner.gd" id="1_ier6v"]
+[ext_resource type="PackedScene" uid="uid://cqiou4qseuill" path="res://BulletHellper/projectile.tscn" id="2_aqlwu"]
+
+[node name="World" type="Node2D"]
+position = Vector2(390, 310)
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("1_ier6v")
+projectile = ExtResource("2_aqlwu")
