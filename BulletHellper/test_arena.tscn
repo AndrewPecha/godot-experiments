@@ -9,3 +9,5 @@ position = Vector2(390, 310)
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("1_ier6v")
 projectile = ExtResource("2_aqlwu")
+shoot_cooldown_timeout = 0.1
+full_rotation_time = 2.0
