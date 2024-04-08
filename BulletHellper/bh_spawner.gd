@@ -26,12 +26,10 @@ func handle_shooting(delta: float) -> void:
 func shoot() -> void:
 	var shot_direction: Vector2
 	
-	if rotate_self:
-		shot_direction = Vector2.RIGHT.rotated(rotation)
-	else:
-		shot_direction = Vector2.RIGHT
+	shot_direction = Vector2.RIGHT.rotated(rotation)
 	
 	var projectile_instance = projectile.instantiate()
+	projectile_instance.global_position = global_position
 	projectile_instance.direction = shot_direction
 	var world = get_tree().root.get_node("World")
 	world.add_child(projectile_instance)

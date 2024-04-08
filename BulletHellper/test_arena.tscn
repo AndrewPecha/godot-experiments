@@ -4,10 +4,33 @@
 [ext_resource type="PackedScene" uid="uid://cqiou4qseuill" path="res://BulletHellper/projectile.tscn" id="2_aqlwu"]
 
 [node name="World" type="Node2D"]
-position = Vector2(390, 310)
 
-[node name="Spawner" type="Node2D" parent="."]
+[node name="SpawnerParent" type="Node2D" parent="."]
+position = Vector2(601, 325)
+
+[node name="Spawner" type="Node2D" parent="SpawnerParent"]
 script = ExtResource("1_ier6v")
 projectile = ExtResource("2_aqlwu")
 shoot_cooldown_timeout = 0.1
-full_rotation_time = 2.0
+full_rotation_time = 10.0
+
+[node name="Spawner2" type="Node2D" parent="SpawnerParent"]
+rotation = 1.5708
+script = ExtResource("1_ier6v")
+projectile = ExtResource("2_aqlwu")
+shoot_cooldown_timeout = 0.1
+full_rotation_time = 10.0
+
+[node name="Spawner3" type="Node2D" parent="SpawnerParent"]
+rotation = 3.14159
+script = ExtResource("1_ier6v")
+projectile = ExtResource("2_aqlwu")
+shoot_cooldown_timeout = 0.1
+full_rotation_time = 10.0
+
+[node name="Spawner4" type="Node2D" parent="SpawnerParent"]
+rotation = 4.71239
+script = ExtResource("1_ier6v")
+projectile = ExtResource("2_aqlwu")
+shoot_cooldown_timeout = 0.1
+full_rotation_time = 10.0
