@@ -4,6 +4,7 @@ extends Node2D
 
 @export var rotate_self: bool = true
 @export var shoot_cooldown_timeout: float = 1.0
+@export var shot_direction: Vector2 = Vector2.RIGHT
 var shoot_cooldown_counter: float = 0
 
 @export var full_rotation_time: float = 5.0
@@ -24,13 +25,9 @@ func handle_shooting(delta: float) -> void:
 		shoot_cooldown_counter = 0
 		
 func shoot() -> void:
-	var shot_direction: Vector2
-	
-	shot_direction = Vector2.RIGHT.rotated(rotation)
-	
 	var projectile_instance = projectile.instantiate()
 	projectile_instance.global_position = global_position
-	projectile_instance.direction = shot_direction
+	projectile_instance.direction = shot_direction.rotated(rotation).rotated(get_parent().rotation)
 	var world = get_tree().root.get_node("World")
 	world.add_child(projectile_instance)
 	
