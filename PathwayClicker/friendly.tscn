@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcl8ke4gt47p0"]
+
+[ext_resource type="Script" path="res://PathwayClicker/friendly.gd" id="1_euu1y"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rksiu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k8eq"]
+albedo_color = Color(0.184314, 0.427451, 0.913725, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l6djn"]
+radius = 0.192059
+height = 0.770423
+
+[node name="Friendly" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 11)
+script = ExtResource("1_euu1y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.371477, 0, 0, 0, 0.371477, 0, 0, 0, 0.371477, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_rksiu")
+surface_material_override/0 = SubResource("StandardMaterial3D_5k8eq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_l6djn")
