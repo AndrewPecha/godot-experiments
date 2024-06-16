@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg2yed6ebe14v"]
+
+[ext_resource type="Script" path="res://PathwayClicker/click_spawner.gd" id="1_wo05p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3qmqo"]
+size = Vector3(4, 0.065, 52.53)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mty8n"]
+albedo_color = Color(0, 0.247059, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_x7h8t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56m4a"]
+albedo_color = Color(0.20647, 9.62615e-07, 0.986337, 1)
+
+[node name="TestArena" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.952661, 0.304033, 0, -0.304033, 0.952661, 0, 2.562, 3.95)
+fov = 52.5
+
+[node name="Pathway" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.9199)
+mesh = SubResource("BoxMesh_3qmqo")
+surface_material_override/0 = SubResource("StandardMaterial3D_mty8n")
+
+[node name="ClickSpawner" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53, 0)
+mesh = SubResource("SphereMesh_x7h8t")
+surface_material_override/0 = SubResource("StandardMaterial3D_56m4a")
+script = ExtResource("1_wo05p")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.17599, -3.65738)
+light_energy = 5.571
