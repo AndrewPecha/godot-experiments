@@ -53,6 +53,11 @@ rmb={
 ]
 }
 
+[layer_names]
+
+3d_render/layer_1="World"
+3d_physics/layer_2="Friendlies"
+
 [rendering]
 
 renderer/rendering_method="mobile"
