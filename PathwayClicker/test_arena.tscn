@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg2yed6ebe14v"]
+[gd_scene load_steps=13 format=3 uid="uid://bg2yed6ebe14v"]
 
 [ext_resource type="Script" path="res://PathwayClicker/click_spawner.gd" id="1_wo05p"]
 [ext_resource type="PackedScene" uid="uid://dcl8ke4gt47p0" path="res://PathwayClicker/friendly.tscn" id="2_kx8yt"]
 [ext_resource type="Script" path="res://PathwayClicker/pathway_end_detector.gd" id="3_i6c6y"]
+[ext_resource type="Script" path="res://PathwayClicker/enemy_spawner.gd" id="4_bwxsn"]
+[ext_resource type="PackedScene" uid="uid://cb47128cktsve" path="res://PathwayClicker/enemy.tscn" id="5_x77tr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3qmqo"]
 size = Vector3(4, 0.065, 52.53)
@@ -14,6 +16,14 @@ albedo_color = Color(0, 0.247059, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56m4a"]
 albedo_color = Color(0.20647, 9.62615e-07, 0.986337, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ekwwd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6prci"]
+albedo_color = Color(0.780392, 0.0196078, 0.14902, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_68m5t"]
+size = Vector3(1, 1.12448, 0.978241)
 
 [node name="World" type="Node3D"]
 
@@ -44,3 +54,15 @@ hit_from_inside = true
 collide_with_areas = true
 debug_shape_thickness = 5
 script = ExtResource("3_i6c6y")
+
+[node name="EnemySpawner" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573093, -30.4519)
+script = ExtResource("4_bwxsn")
+enemy = ExtResource("5_x77tr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemySpawner"]
+mesh = SubResource("BoxMesh_ekwwd")
+surface_material_override/0 = SubResource("StandardMaterial3D_6prci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemySpawner"]
+shape = SubResource("BoxShape3D_68m5t")

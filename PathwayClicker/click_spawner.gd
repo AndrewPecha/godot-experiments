@@ -9,9 +9,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#print("mouse position: ", get_viewport().get_mouse_position())
+	#print("viewport rect: ", get_viewport().get_visible_rect())
 	var viewportLength = get_viewport().size.x
 	var mousePositionRelativeToCenterOfViewport = get_viewport().get_mouse_position().x - (viewportLength / 2)
-	var mouse_position_x = clampf(mousePositionRelativeToCenterOfViewport / 100, -1.8, 1.8)
+	#print("mouse position relative to center: ", mousePositionRelativeToCenterOfViewport)
+	var mouse_position_x = clampf(mousePositionRelativeToCenterOfViewport / 150, -1.8, 1.8)
 	global_position.x = mouse_position_x
 	if Input.is_action_just_pressed("left_click"):
 		_spawn_friendly()
