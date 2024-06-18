@@ -1,6 +1,7 @@
-extends CharacterBody3D
+extends RigidBody3D
 class_name Friendly
 
+var gateways_used: Array[int] = []
 
 const SPEED = 5.0
 

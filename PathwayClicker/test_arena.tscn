@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bg2yed6ebe14v"]
+[gd_scene load_steps=14 format=3 uid="uid://bg2yed6ebe14v"]
 
+[ext_resource type="PackedScene" uid="uid://c2errvxpnu4ug" path="res://PathwayClicker/2x_gateway.tscn" id="1_fhobq"]
 [ext_resource type="Script" path="res://PathwayClicker/click_spawner.gd" id="1_wo05p"]
 [ext_resource type="PackedScene" uid="uid://dcl8ke4gt47p0" path="res://PathwayClicker/friendly.tscn" id="2_kx8yt"]
 [ext_resource type="Script" path="res://PathwayClicker/pathway_end_detector.gd" id="3_i6c6y"]
@@ -35,6 +36,9 @@ fov = 52.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.9199)
 mesh = SubResource("BoxMesh_3qmqo")
 surface_material_override/0 = SubResource("StandardMaterial3D_mty8n")
+
+[node name="2x_Gateway" parent="Pathway" instance=ExtResource("1_fhobq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3818, 0.414051, 20.6099)
 
 [node name="ClickSpawner" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53, 0)

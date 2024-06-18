@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2errvxpnu4ug"]
+
+[ext_resource type="Script" path="res://PathwayClicker/2x_gateway.gd" id="1_gi6eo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_00cov"]
+size = Vector3(1.47, 0.725, 0.07)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efb7r"]
+transparency = 1
+albedo_color = Color(0.921569, 0, 0.658824, 0.72549)
+
+[sub_resource type="SystemFont" id="SystemFont_axiji"]
+
+[sub_resource type="TextMesh" id="TextMesh_wsua1"]
+text = "2X"
+font = SubResource("SystemFont_axiji")
+font_size = 80
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0nfj"]
+albedo_color = Color(0, 0, 0.901961, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ttroc"]
+size = Vector3(1.45264, 0.710022, 0.071907)
+
+[node name="2x_Gateway" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0818, 0.414051, 20.6099)
+collision_mask = 2
+script = ExtResource("1_gi6eo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 7
+mesh = SubResource("BoxMesh_00cov")
+surface_material_override/0 = SubResource("StandardMaterial3D_efb7r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0267344)
+mesh = SubResource("TextMesh_wsua1")
+surface_material_override/0 = SubResource("StandardMaterial3D_p0nfj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100098, 0.00350952, 0.00248337)
+shape = SubResource("BoxShape3D_ttroc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
