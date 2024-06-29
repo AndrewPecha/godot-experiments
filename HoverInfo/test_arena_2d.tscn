@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsasg21bxsnsj"]
+
+[ext_resource type="Script" path="res://HoverInfo/hover_item.gd" id="1_6kq0k"]
+[ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="1_ojwi6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnt8p"]
+size = Vector2(129, 130)
+
+[sub_resource type="Theme" id="Theme_cmcmj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt3hw"]
+bg_color = Color(0.187176, 0.187176, 0.187176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.0156863, 0.0352941, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_us74k"]
+font_names = PackedStringArray("Bernard MT")
+oversampling = 10.0
+
+[node name="TestArena2d" type="Node2D"]
+
+[node name="HoverItem" type="Area2D" parent="."]
+position = Vector2(284, 319)
+script = ExtResource("1_6kq0k")
+
+[node name="Sprite2D" type="Sprite2D" parent="HoverItem"]
+texture = ExtResource("1_ojwi6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverItem"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_rnt8p")
+
+[node name="Container" type="PanelContainer" parent="HoverItem"]
+offset_left = 68.0
+offset_top = -262.0
+offset_right = 332.0
+offset_bottom = -68.0
+theme = SubResource("Theme_cmcmj")
+theme_override_styles/panel = SubResource("StyleBoxFlat_mt3hw")
+
+[node name="HoverMenu" type="VBoxContainer" parent="HoverItem/Container"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HoverItem/Container/HoverMenu"]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("SystemFont_us74k")
+theme_override_font_sizes/normal_font_size = 27
+text = "Hi there!!"
+fit_content = true
+
+[connection signal="mouse_entered" from="HoverItem" to="HoverItem" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HoverItem" to="HoverItem" method="_on_mouse_exited"]
