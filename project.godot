@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="experiments"
-run/main_scene="res://AutoAttackOnStationary/test_arena.tscn"
+run/main_scene="res://FarmingSim/test_arena.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf44871pa2nn8"]
+
+[ext_resource type="Script" path="res://FarmingSim/farmer.gd" id="1_or1fb"]
+[ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="1_qgtmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krarh"]
+size = Vector2(38, 38)
+
+[node name="Farmer" type="CharacterBody2D"]
+script = ExtResource("1_or1fb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.285156, 0.285156)
+texture = ExtResource("1_qgtmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_krarh")

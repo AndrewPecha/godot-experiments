@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu2tccvyuvlxl"]
+
+[ext_resource type="PackedScene" uid="uid://bw0eqvd3pj6bo" path="res://FarmingSim/farm_plot.tscn" id="1_jvlif"]
+[ext_resource type="PackedScene" uid="uid://cf44871pa2nn8" path="res://FarmingSim/farmer.tscn" id="2_dl26g"]
+
+[node name="TestArena" type="Node2D"]
+
+[node name="FarmPlot" parent="." instance=ExtResource("1_jvlif")]
+position = Vector2(321, 242)
+
+[node name="FarmPlot2" parent="." instance=ExtResource("1_jvlif")]
+position = Vector2(358, 242)
+
+[node name="Farmer" parent="." instance=ExtResource("2_dl26g")]

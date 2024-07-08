@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw0eqvd3pj6bo"]
+
+[ext_resource type="Texture2D" uid="uid://bhy7jyyt38rvt" path="res://FarmingSim/Placeholder_Square.png" id="1_ngetj"]
+[ext_resource type="Script" path="res://FarmingSim/farm_plot.gd" id="1_o4xp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iluy"]
+size = Vector2(32, 32)
+
+[node name="FarmPlot" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_o4xp6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1iluy")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.281888, 0.175865, 0.0334778, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ngetj")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

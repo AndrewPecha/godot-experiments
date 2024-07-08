@@ -14,7 +14,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.8, 0.0156863, 0.0352941, 1)
+border_color = Color(0.434662, 0.00382543, 0.00909873, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_us74k"]
 font_names = PackedStringArray("Bernard MT")
@@ -34,10 +34,10 @@ position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_rnt8p")
 
 [node name="Container" type="PanelContainer" parent="HoverItem"]
-offset_left = 68.0
-offset_top = -262.0
-offset_right = 332.0
-offset_bottom = -68.0
+offset_left = 67.0
+offset_top = -260.0
+offset_right = 331.0
+offset_bottom = -66.0
 theme = SubResource("Theme_cmcmj")
 theme_override_styles/panel = SubResource("StyleBoxFlat_mt3hw")
 
