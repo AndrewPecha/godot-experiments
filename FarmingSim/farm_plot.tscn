@@ -6,16 +6,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1iluy"]
 size = Vector2(32, 32)
 
-[node name="FarmPlot" type="StaticBody2D"]
-input_pickable = true
+[node name="FarmPlot" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_o4xp6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1iluy")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." groups=["FarmPlots"]]
 modulate = Color(0.281888, 0.175865, 0.0334778, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ngetj")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
