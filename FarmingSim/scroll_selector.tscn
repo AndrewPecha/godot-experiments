@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqw5nuycs8au5"]
+
+[ext_resource type="Texture2D" uid="uid://drxibwl8guc50" path="res://FarmingSim/Angry.png" id="1_5l6yi"]
+[ext_resource type="Script" path="res://FarmingSim/scroll_selector.gd" id="1_kc8x1"]
+[ext_resource type="Texture2D" uid="uid://bsi5ggf10m5ce" path="res://FarmingSim/Concerned.png" id="2_e3evi"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 1152.0
+offset_bottom = 652.0
+
+[node name="ScrollSelector" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -82.0
+offset_right = 1152.0
+offset_bottom = -9.0
+grow_vertical = 0
+alignment = 1
+script = ExtResource("1_kc8x1")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollSelector"]
+layout_mode = 2
+texture = ExtResource("1_5l6yi")
+expand_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="ScrollSelector/TextureRect"]
+z_index = -1
+custom_minimum_size = Vector2(74, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -39.0
+offset_right = 39.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.768871, 0.60324, 0, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollSelector"]
+layout_mode = 2
+texture = ExtResource("2_e3evi")
+expand_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="ScrollSelector/TextureRect2"]
+visible = false
+z_index = -1
+custom_minimum_size = Vector2(78.48, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.24
+offset_top = -38.76
+offset_right = 39.24
+offset_bottom = 39.24
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.768627, 0.603922, 0, 1)
