@@ -2,6 +2,7 @@ class_name Farmer
 extends CharacterBody2D
 
 var current_plot: FarmPlot
+var current_skill: Skill
 
 const SPEED = 300.0
 
@@ -27,6 +28,10 @@ func _find_plot() -> FarmPlot:
 	
 	return closest_plot
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("left_click"):
+		current_skill.perform_action()
+
 func handle_movement() -> void:
 	var direction_x := Input.get_axis("left", "right")
 	var direction_y := Input.get_axis("up", "down")
@@ -44,3 +49,6 @@ func handle_movement() -> void:
 	velocity = velocity.normalized() * SPEED
 
 	move_and_slide()
+
+func set_skill(skill: Skill) -> void:
+	current_skill = skill

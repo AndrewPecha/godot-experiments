@@ -1,18 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqw5nuycs8au5"]
+[gd_scene load_steps=6 format=3 uid="uid://cqw5nuycs8au5"]
 
 [ext_resource type="Texture2D" uid="uid://drxibwl8guc50" path="res://FarmingSim/Angry.png" id="1_5l6yi"]
 [ext_resource type="Script" path="res://FarmingSim/scroll_selector.gd" id="1_kc8x1"]
 [ext_resource type="Texture2D" uid="uid://bsi5ggf10m5ce" path="res://FarmingSim/Concerned.png" id="2_e3evi"]
+[ext_resource type="Script" path="res://FarmingSim/water.gd" id="3_da1li"]
+[ext_resource type="Script" path="res://FarmingSim/scythe.gd" id="5_vy678"]
 
-[node name="Control" type="Control"]
+[node name="ScrollSelector" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = -1.0
-offset_top = 5.0
-offset_right = 1152.0
-offset_bottom = 652.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -647.0
+offset_right = 1153.0
+grow_vertical = 0
+script = ExtResource("1_kc8x1")
 
-[node name="ScrollSelector" type="HBoxContainer" parent="."]
+[node name="Menu" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -22,14 +26,14 @@ offset_right = 1152.0
 offset_bottom = -9.0
 grow_vertical = 0
 alignment = 1
-script = ExtResource("1_kc8x1")
 
-[node name="TextureRect" type="TextureRect" parent="ScrollSelector"]
+[node name="Water" type="TextureRect" parent="Menu"]
 layout_mode = 2
 texture = ExtResource("1_5l6yi")
 expand_mode = 3
+script = ExtResource("3_da1li")
 
-[node name="ColorRect" type="ColorRect" parent="ScrollSelector/TextureRect"]
+[node name="ColorRect" type="ColorRect" parent="Menu/Water"]
 z_index = -1
 custom_minimum_size = Vector2(74, 0)
 layout_mode = 1
@@ -46,12 +50,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.768871, 0.60324, 0, 1)
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollSelector"]
+[node name="Scythe" type="TextureRect" parent="Menu"]
 layout_mode = 2
 texture = ExtResource("2_e3evi")
 expand_mode = 3
+script = ExtResource("5_vy678")
 
-[node name="ColorRect" type="ColorRect" parent="ScrollSelector/TextureRect2"]
+[node name="ColorRect" type="ColorRect" parent="Menu/Scythe"]
 visible = false
 z_index = -1
 custom_minimum_size = Vector2(78.48, 0)
