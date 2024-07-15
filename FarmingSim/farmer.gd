@@ -31,6 +31,7 @@ func _find_plot() -> FarmPlot:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		current_skill.perform_action()
+		$AnimationPlayer.play(current_skill.skill_name)
 
 func handle_movement() -> void:
 	var direction_x := Input.get_axis("left", "right")

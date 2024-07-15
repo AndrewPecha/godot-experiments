@@ -1,6 +1,7 @@
 extends Node
 class_name Skill
 
+var skill_name: String = "unknown"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
