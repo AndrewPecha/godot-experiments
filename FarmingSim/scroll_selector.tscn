@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqw5nuycs8au5"]
+[gd_scene load_steps=8 format=3 uid="uid://cqw5nuycs8au5"]
 
 [ext_resource type="Texture2D" uid="uid://drxibwl8guc50" path="res://FarmingSim/Angry.png" id="1_5l6yi"]
 [ext_resource type="Script" path="res://FarmingSim/scroll_selector.gd" id="1_kc8x1"]
 [ext_resource type="Texture2D" uid="uid://bsi5ggf10m5ce" path="res://FarmingSim/Concerned.png" id="2_e3evi"]
 [ext_resource type="Script" path="res://FarmingSim/water.gd" id="3_da1li"]
 [ext_resource type="Script" path="res://FarmingSim/scythe.gd" id="5_vy678"]
+[ext_resource type="Texture2D" uid="uid://bh2sdugtygt3a" path="res://FarmingSim/hoe.png" id="6_cxryt"]
+[ext_resource type="Script" path="res://FarmingSim/hoe.gd" id="7_oaaf8"]
 
 [node name="ScrollSelector" type="Control"]
 layout_mode = 3
@@ -72,4 +74,22 @@ offset_right = 39.24
 offset_bottom = 39.24
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.768627, 0.603922, 0, 1)
+
+[node name="Hoe" type="TextureRect" parent="Menu"]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("6_cxryt")
+expand_mode = 2
+script = ExtResource("7_oaaf8")
+
+[node name="ColorRect" type="ColorRect" parent="Menu/Hoe"]
+visible = false
+z_index = -1
+custom_minimum_size = Vector2(78.48, 0)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 75.48
+offset_bottom = 76.0
 color = Color(0.768627, 0.603922, 0, 1)
