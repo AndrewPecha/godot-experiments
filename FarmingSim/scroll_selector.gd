@@ -17,7 +17,15 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_released('scroll_down'):
 		var texture_rects = $Menu.get_children()
-		for rect in texture_rects:
-			rect.get_node('ColorRect').visible = !rect.get_node('ColorRect').visible
+		for x in len(texture_rects):
+			var rect = texture_rects[x]
+			#rect.get_node('ColorRect').visible = !rect.get_node('ColorRect').visible
 			if rect.get_node('ColorRect').visible:
-				player.set_skill(rect)
+				var next_skill_index = x + 1
+				if next_skill_index == len(texture_rects):
+					next_skill_index = 0
+				var next_skill = texture_rects[next_skill_index]
+				rect.get_node('ColorRect').visible = false
+				next_skill.get_node('ColorRect').visible = true
+				player.set_skill(next_skill)
+				return
