@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://n5yen0suvjv8"]
+
+[ext_resource type="ArrayMesh" uid="uid://7pwoupf0n7j5" path="res://IsometricTapRpg/Cube.obj" id="1_5u3v8"]
+[ext_resource type="Script" path="res://IsometricTapRpg/healer.gd" id="2_s3khg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxiuy"]
+albedo_color = Color(0.389865, 0.25768, 0.0745894, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ei0my"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iholf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjdae"]
+albedo_color = Color(0.464386, 1, 0.521395, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_b7n44"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1f7g"]
+albedo_color = Color(1, 0.121569, 0.156863, 1)
+
+[node name="TestArena" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 5)
+fov = 54.2507
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 8, 8)
+
+[node name="FloorPanels" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorPanels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
+mesh = ExtResource("1_5u3v8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxiuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorPanels/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorPanels/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_ei0my")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="FloorPanels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 1)
+mesh = ExtResource("1_5u3v8")
+skeleton = NodePath("../MeshInstance3D4")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxiuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorPanels/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorPanels/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_ei0my")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="FloorPanels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 1)
+mesh = ExtResource("1_5u3v8")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxiuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorPanels/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorPanels/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_ei0my")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="FloorPanels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -1)
+mesh = ExtResource("1_5u3v8")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxiuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorPanels/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorPanels/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_ei0my")
+
+[node name="Healer" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0.3, 1)
+mesh = SubResource("CapsuleMesh_iholf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yjdae")
+script = ExtResource("2_s3khg")
+
+[node name="Enemy" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.62268e-08, 0, 0.2, 0, 0.605, 0, -0.6, 0, -8.74228e-09, 1.4, 0.3, 0)
+visible = false
+mesh = SubResource("PrismMesh_b7n44")
+surface_material_override/0 = SubResource("StandardMaterial3D_b1f7g")

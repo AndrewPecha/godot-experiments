@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmgib3x0hovxf"]
+
+[ext_resource type="ArrayMesh" uid="uid://7pwoupf0n7j5" path="res://IsometricTapRpg/Cube.obj" id="1_0cd2b"]
+[ext_resource type="Script" path="res://IsometricTapRpg/placeholder_projectile.gd" id="1_0srf0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cmxru"]
+size = Vector3(1.9863, 2.00572, 2.01292)
+
+[node name="PlaceholderProjectile" type="Node3D"]
+script = ExtResource("1_0srf0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
+mesh = ExtResource("1_0cd2b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1.00011, 0, 0, 0, 1.00011, 0, 0, 0, 1.00011, 0.00386057, -0.00455627, -0.0182114)
+shape = SubResource("BoxShape3D_cmxru")
