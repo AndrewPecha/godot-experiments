@@ -5,3 +5,4 @@
   - Bard
   - Mage
 - Start with basic Isometric and Capsule
+- Bezier Visualizer?
