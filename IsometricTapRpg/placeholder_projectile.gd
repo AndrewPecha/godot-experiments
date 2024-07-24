@@ -5,7 +5,7 @@ var shot_direction: Vector3
 const SPEED = 8
 
 var bezier_speed: float = 2.0
-var deviation_distance: float = 15
+var deviation_distance: float = 5
 var deviation_angle: float = 90
 
 var p0: Vector3
@@ -28,7 +28,10 @@ func _physics_process(delta: float) -> void:
 	if t < 1.0:
 		t += bezier_speed * delta
 		
-	position = position.bezier_interpolate(p0, p1, p2, t)
+	if t > 1.0:
+		t = 1.0
+		
+	position = _quadratic_bezier(p0, p1, p2, t)
 
 # lots of code modified from https://www.youtube.com/watch?v=4SHqHFWYg-s&t=106s
 func set_destination(destination):
@@ -40,3 +43,9 @@ func set_destination(destination):
 	p1 = p0 + deviation_distance * tilted_unit_vector
 	
 	call_deferred("set_physics_process", true)
+
+func _quadratic_bezier(p0: Vector3, p1: Vector3, p2: Vector3, t: float):
+	var q0 = p0.lerp(p1, t)
+	var q1 = p1.lerp(p2, t)
+	var r = q0.lerp(q1, t)
+	return r
