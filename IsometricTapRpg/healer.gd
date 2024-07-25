@@ -36,8 +36,6 @@ func _input(event: InputEvent) -> void:
 		
 func shoot_at(target: Vector3) -> void:
 	var shot_vector = Vector3(target.x, position.y, target.z) - position
-	#shot_vector = shot_vector.rotated(Vector3(0, 1, 0), deg_to_rad(90))
-	#var shot_vector_2 = shot_vector.rotated(Vector3(0, 1, 0), deg_to_rad(-180))
 
 	var projectile_instance: PlaceholderProjectile = projectile.instantiate()
 	projectile_instance.global_position = global_position

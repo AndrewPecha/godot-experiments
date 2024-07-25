@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://n5yen0suvjv8"]
+[gd_scene load_steps=12 format=3 uid="uid://n5yen0suvjv8"]
 
 [ext_resource type="ArrayMesh" uid="uid://7pwoupf0n7j5" path="res://IsometricTapRpg/Cube.obj" id="1_5u3v8"]
 [ext_resource type="Script" path="res://IsometricTapRpg/healer.gd" id="2_s3khg"]
@@ -19,6 +19,11 @@ albedo_color = Color(0.464386, 1, 0.521395, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1f7g"]
 albedo_color = Color(1, 0.121569, 0.156863, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6eks8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nub6v"]
+albedo_color = Color(0, 1, 1, 1)
 
 [node name="World" type="Node3D"]
 
@@ -84,5 +89,11 @@ projectile = ExtResource("3_nsfrh")
 
 [node name="Enemy" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.62268e-08, 0, 0.2, 0, 0.605, 0, -0.6, 0, -8.74228e-09, 1.4, 0.3, 0)
+visible = false
 mesh = SubResource("PrismMesh_b7n44")
 surface_material_override/0 = SubResource("StandardMaterial3D_b1f7g")
+
+[node name="Ally" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.36, 0, 0, 0, 0.15, 0, 0, 0, 0.36, 0, 0.158842, -1)
+mesh = SubResource("CylinderMesh_6eks8")
+surface_material_override/0 = SubResource("StandardMaterial3D_nub6v")
