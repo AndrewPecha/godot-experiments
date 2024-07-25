@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		t = 1.0
 		
 	#position = _quadratic_bezier(p0, p1, p2, t)
-	position = _cubic_bezier(p0, p1, p2, p3, t)
+	position = _cubic_bezier()
 	
 	if t >= 1.0:
 		queue_free()
@@ -66,13 +66,13 @@ func set_destination_cubic(destination: Vector3, p1_angle: float, p2_angle: floa
 
 
 #bezier functions made from https://docs.godotengine.org/en/stable/tutorials/math/beziers_and_curves.html
-func _quadratic_bezier(p0: Vector3, p1: Vector3, p2: Vector3, t: float):
+func _quadratic_bezier():
 	var q0 = p0.lerp(p1, t)
 	var q1 = p1.lerp(p2, t)
 	var r = q0.lerp(q1, t)
 	return r
 
-func _cubic_bezier(p0: Vector3, p1: Vector3, p2: Vector3, p3: Vector3, t: float):
+func _cubic_bezier():
 	var q0 = p0.lerp(p1, t)
 	var q1 = p1.lerp(p2, t)
 	var q2 = p2.lerp(p3, t)

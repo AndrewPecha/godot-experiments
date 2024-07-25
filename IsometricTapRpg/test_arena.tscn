@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://n5yen0suvjv8"]
+[gd_scene load_steps=13 format=3 uid="uid://n5yen0suvjv8"]
 
 [ext_resource type="ArrayMesh" uid="uid://7pwoupf0n7j5" path="res://IsometricTapRpg/Cube.obj" id="1_5u3v8"]
 [ext_resource type="Script" path="res://IsometricTapRpg/healer.gd" id="2_s3khg"]
@@ -24,6 +24,10 @@ albedo_color = Color(1, 0.121569, 0.156863, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nub6v"]
 albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hequk"]
+height = 0.402087
+radius = 0.247277
 
 [node name="World" type="Node3D"]
 
@@ -93,7 +97,14 @@ visible = false
 mesh = SubResource("PrismMesh_b7n44")
 surface_material_override/0 = SubResource("StandardMaterial3D_b1f7g")
 
-[node name="Ally" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.36, 0, 0, 0, 0.15, 0, 0, 0, 0.36, 0, 0.158842, -1)
+[node name="Ally" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206183, -1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ally"]
+transform = Transform3D(0.486, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_6eks8")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_nub6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ally"]
+shape = SubResource("CylinderShape3D_hequk")
