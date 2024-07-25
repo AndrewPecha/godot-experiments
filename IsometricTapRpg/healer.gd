@@ -48,8 +48,3 @@ func shoot_at(target: Vector3) -> void:
 	projectile_instance_2.global_position = global_position
 	projectile_instance_2.set_destination_cubic(target, -20, -20, 3)
 	get_tree().root.get_node("World").add_child(projectile_instance_2)
-	
-	#var projectile_instance_2: PlaceholderProjectile = projectile.instantiate()
-	#projectile_instance_2.global_position = global_position
-	#projectile_instance_2.shot_direction = shot_vector_2.normalized()
-	#get_tree().root.get_node("World").add_child(projectile_instance_2)
