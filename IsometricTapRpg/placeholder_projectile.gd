@@ -2,9 +2,8 @@ extends Node3D
 class_name PlaceholderProjectile
 
 var shot_direction: Vector3
-const SPEED = 8
 
-var bezier_speed: float = 2.0
+var bezier_speed: float = 1.0
 var deviation_distance: float = 5
 var deviation_angle: float = 90
 
@@ -19,13 +18,7 @@ func _ready():
 	set_physics_process(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	#position += shot_direction * SPEED * delta
-	
-	#if t >= 1.0:
-		#queue_free()
-		#return
-	
+func _physics_process(delta: float) -> void:	
 	if t < 1.0:
 		t += bezier_speed * delta
 		
