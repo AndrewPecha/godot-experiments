@@ -1,6 +1,8 @@
 extends Node3D
 class_name PlaceholderProjectile
 
+@export var bezier_marker: PackedScene
+
 var shot_direction: Vector3
 
 var bezier_speed: float = 1.0
@@ -13,6 +15,8 @@ var p2: Vector3
 var p3: Vector3
 
 var t: float = 0.0
+
+var markers: Array
 
 func _ready():
 	set_physics_process(false)
@@ -30,6 +34,8 @@ func _physics_process(delta: float) -> void:
 	
 	if t >= 1.0:
 		queue_free()
+		for x in markers:
+			x.queue_free()
 
 # lots of code modified from https://www.youtube.com/watch?v=4SHqHFWYg-s&t=106s
 func set_destination(destination):
@@ -42,21 +48,50 @@ func set_destination(destination):
 	
 	call_deferred("set_physics_process", true)
 	
-func set_destination_cubic(destination: Vector3, p1_angle: float, p2_angle: float, p1_distance: float):
-	p0 = position
-	p1 = (destination - p0).normalized().rotated(Vector3(0, 1, 0), deg_to_rad(-p1_angle)) * p1_distance
-	p1.y = position.y
-	p2 = (destination - p0).normalized().rotated(Vector3(0, 1, 0), deg_to_rad(-p2_angle)) * p0.distance_to(destination)
+func set_destination_cubic(init_position: Vector3, destination: Vector3, p1_angle: float, p2_angle: float, p1_distance: float):
+	p0 = init_position
+	p1 = (destination - p0).normalized().rotated(Vector3(0, 1, 0), deg_to_rad(-p1_angle)).normalized()
+	p1.y = init_position.y
+	p2 = (destination - p0).normalized().rotated(Vector3(0, 1, 0), deg_to_rad(-p2_angle)).normalized()
 	p2.y = destination.y
 	p3 = destination
 	
-	print("p0: " + str(p0))
-	print("p1: " + str(p1))
-	print("p2: " + str(p2))
-	print("p3: " + str(p3))
+	#print("p0: " + str(p0))
+	#print("p1: " + str(p1))
+	#print("p2: " + str(p2))
+	#print("p3: " + str(p3))
+	call_deferred("_draw_points")
 	
 	call_deferred("set_physics_process", true)
 
+func _draw_points() -> void:
+	var p0_marker = bezier_marker.instantiate()
+	var p1_marker = bezier_marker.instantiate()
+	var p2_marker = bezier_marker.instantiate()
+	var p3_marker = bezier_marker.instantiate()
+	
+	p0_marker.position = p0
+	p1_marker.position = p1
+	p2_marker.position = p2
+	p3_marker.position = p3
+	
+	var newMaterial = StandardMaterial3D.new()
+	newMaterial.albedo_color = Color.RED
+	p1_marker.get_node("MeshInstance3D").material_override = newMaterial
+	
+	var newMaterial2 = StandardMaterial3D.new()
+	newMaterial2.albedo_color = Color.GREEN
+	p2_marker.get_node("MeshInstance3D").material_override = newMaterial2
+	
+	get_tree().root.get_node("World").add_child(p0_marker)
+	get_tree().root.get_node("World").add_child(p1_marker)
+	get_tree().root.get_node("World").add_child(p2_marker)
+	get_tree().root.get_node("World").add_child(p3_marker)
+	
+	markers.append(p0_marker)
+	markers.append(p1_marker)
+	markers.append(p2_marker)
+	markers.append(p3_marker)
 
 #bezier functions made from https://docs.godotengine.org/en/stable/tutorials/math/beziers_and_curves.html
 func _quadratic_bezier():

@@ -37,10 +37,10 @@ func shoot_at(target: Vector3) -> void:
 
 	var projectile_instance: PlaceholderProjectile = projectile.instantiate()
 	projectile_instance.global_position = global_position
-	projectile_instance.set_destination_cubic(target, 20, 20, 3)
+	projectile_instance.set_destination_cubic(global_position, target, 90, 40, 3)
 	get_tree().root.get_node("World").add_child(projectile_instance)
 	
 	var projectile_instance_2: PlaceholderProjectile = projectile.instantiate()
 	projectile_instance_2.global_position = global_position
-	projectile_instance_2.set_destination_cubic(target, -20, -20, 3)
+	projectile_instance_2.set_destination_cubic(global_position, target, -90, -40, 3)
 	get_tree().root.get_node("World").add_child(projectile_instance_2)
