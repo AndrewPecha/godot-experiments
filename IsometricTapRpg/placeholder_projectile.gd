@@ -17,6 +17,7 @@ var p3: Vector3
 var t: float = 0.0
 
 var markers: Array
+var draw_markers: bool = false
 
 func _ready():
 	set_physics_process(false)
@@ -60,7 +61,8 @@ func set_destination_cubic(init_position: Vector3, destination: Vector3, p1_angl
 	#print("p1: " + str(p1))
 	#print("p2: " + str(p2))
 	#print("p3: " + str(p3))
-	call_deferred("_draw_points")
+	if draw_markers:
+		call_deferred("_draw_points")
 	
 	call_deferred("set_physics_process", true)
 
