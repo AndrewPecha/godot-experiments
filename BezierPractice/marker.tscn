@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcq7tn7t7yhtk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_i80qf"]
+
+[node name="Marker" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(24.5272, 23.5)
+mesh = SubResource("SphereMesh_i80qf")
