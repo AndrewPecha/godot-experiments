@@ -50,9 +50,9 @@ func set_destination(destination):
 	
 func set_destination_cubic(init_position: Vector3, destination: Vector3, p1_angle: float, p2_angle: float, p1_distance: float):
 	p0 = init_position
-	p1 = (destination - p0).normalized().rotated(Vector3(0, 1, 0), deg_to_rad(-p1_angle)).normalized()
+	p1 = p0 + (destination - p0).normalized().rotated(Vector3(0, 1, 0), deg_to_rad(-p1_angle)).normalized() * p1_distance
 	p1.y = init_position.y
-	p2 = (destination - p0).normalized().rotated(Vector3(0, 1, 0), deg_to_rad(-p2_angle)).normalized()
+	p2 = p0 + (destination - p0).normalized().rotated(Vector3(0, 1, 0), deg_to_rad(-p2_angle)).normalized() * ((destination - p0).length() * .8)
 	p2.y = destination.y
 	p3 = destination
 	
