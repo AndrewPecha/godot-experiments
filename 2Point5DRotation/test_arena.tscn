@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://3c0o3q7y78qi"]
+
+[ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="1_6qnd6"]
+[ext_resource type="Texture2D" uid="uid://bbguu825tlhwu" path="res://Sprites/gator.png" id="2_icv2k"]
+[ext_resource type="Script" path="res://2Point5DRotation/gator.gd" id="2_yg2k6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_780cm"]
+size = Vector3(0.413055, 0.467499, 0.354492)
+
+[node name="TestArena" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Environment"]
+transform = Transform3D(0.77, 0, 0, 0, -3.36578e-08, 0.77, 0, -0.77, -3.36578e-08, 0.5, 0, 0.5)
+texture = ExtResource("1_6qnd6")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Environment"]
+transform = Transform3D(0.77, 0, 0, 0, -3.36578e-08, 0.77, 0, -0.77, -3.36578e-08, 0.5, 0, -0.5)
+texture = ExtResource("1_6qnd6")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Environment"]
+transform = Transform3D(0.77, 0, 0, 0, -3.36578e-08, 0.77, 0, -0.77, -3.36578e-08, -0.5, 0, -0.5)
+texture = ExtResource("1_6qnd6")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Environment"]
+transform = Transform3D(0.77, 0, 0, 0, -3.36578e-08, 0.77, 0, -0.77, -3.36578e-08, -0.5, 0, 0.5)
+texture = ExtResource("1_6qnd6")
+
+[node name="Gator" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0313783, 0)
+script = ExtResource("2_yg2k6")
+
+[node name="Camera3D" type="Camera3D" parent="Gator"]
+transform = Transform3D(1, 0, 0, 0, 0.86984, 0.493335, 0, -0.493335, 0.86984, 0, 1.61953, 1.8933)
+
+[node name="Sprite3D" type="Sprite3D" parent="Gator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+billboard = 1
+texture_filter = 2
+texture = ExtResource("2_icv2k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00682068, 0.288986, -0.00732422)
+shape = SubResource("BoxShape3D_780cm")
