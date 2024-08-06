@@ -28,18 +28,19 @@ transform = Transform3D(0.77, 0, 0, 0, -3.36578e-08, 0.77, 0, -0.77, -3.36578e-0
 texture = ExtResource("1_6qnd6")
 
 [node name="Gator" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0313783, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403078, 0)
+motion_mode = 1
 script = ExtResource("2_yg2k6")
 
 [node name="Camera3D" type="Camera3D" parent="Gator"]
-transform = Transform3D(1, 0, 0, 0, 0.86984, 0.493335, 0, -0.493335, 0.86984, 0, 1.61953, 1.8933)
+transform = Transform3D(1, 0, 0, 0, 0.764651, 0.644444, 0, -0.644444, 0.764651, 0, 1.88525, 1.8933)
 
 [node name="Sprite3D" type="Sprite3D" parent="Gator"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+offset = Vector2(12, 0)
 billboard = 1
 texture_filter = 0
 texture = ExtResource("2_icv2k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gator"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00682068, 0.288986, 0.0115357)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12448, -0.00546414, 0.0115357)
 shape = SubResource("BoxShape3D_780cm")
