@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://2Point5DRotation/gator.gd" id="2_yg2k6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_780cm"]
-size = Vector3(0.413055, 0.467499, 0.354492)
+size = Vector3(0.413055, 0.467499, 0.392212)
 
 [node name="TestArena" type="Node3D"]
 
@@ -37,9 +37,9 @@ transform = Transform3D(1, 0, 0, 0, 0.86984, 0.493335, 0, -0.493335, 0.86984, 0,
 [node name="Sprite3D" type="Sprite3D" parent="Gator"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 billboard = 1
-texture_filter = 2
+texture_filter = 0
 texture = ExtResource("2_icv2k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gator"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00682068, 0.288986, -0.00732422)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00682068, 0.288986, 0.0115357)
 shape = SubResource("BoxShape3D_780cm")
