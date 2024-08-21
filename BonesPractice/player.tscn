@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://efp3wwexliiq"]
+
+[ext_resource type="Texture2D" uid="uid://bnehft2hijdbc" path="res://Sprites/CutoutMan/HeadAndTorso.PNG" id="1_u0o0n"]
+[ext_resource type="Texture2D" uid="uid://bqemx75t8heof" path="res://Sprites/CutoutMan/Hand.PNG" id="2_13wwv"]
+[ext_resource type="Texture2D" uid="uid://dp3vwlae3swgo" path="res://Sprites/CutoutMan/Eye.PNG" id="3_vnxs5"]
+
+[node name="Player" type="Node2D"]
+position = Vector2(601, 342)
+
+[node name="HeadAndTorso" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_u0o0n")
+
+[node name="LeftHand" type="Sprite2D" parent="HeadAndTorso"]
+position = Vector2(-430, 320)
+texture = ExtResource("2_13wwv")
+
+[node name="RightHand" type="Sprite2D" parent="HeadAndTorso"]
+position = Vector2(430, 340)
+texture = ExtResource("2_13wwv")
+
+[node name="LeftEye" type="Sprite2D" parent="HeadAndTorso"]
+position = Vector2(-60, -400)
+texture = ExtResource("3_vnxs5")
+
+[node name="RightEye" type="Sprite2D" parent="HeadAndTorso"]
+position = Vector2(90, -400)
+texture = ExtResource("3_vnxs5")

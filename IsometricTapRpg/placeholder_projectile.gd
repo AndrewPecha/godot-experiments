@@ -3,8 +3,6 @@ class_name PlaceholderProjectile
 
 @export var bezier_marker: PackedScene
 
-var shot_direction: Vector3
-
 var bezier_speed: float = 1.0
 var deviation_distance: float = 5
 var deviation_angle: float = 90
