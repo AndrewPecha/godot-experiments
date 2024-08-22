@@ -15,20 +15,24 @@ position = Vector2(601, 342)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_u0o0n")
 
-[node name="LeftHand" type="Sprite2D" parent="PartsSkeletonContainer/Parts/HeadAndTorso"]
-position = Vector2(-430, 320)
+[node name="LeftHand" type="Sprite2D" parent="PartsSkeletonContainer/Parts"]
+position = Vector2(-43, 32)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_13wwv")
 
-[node name="RightHand" type="Sprite2D" parent="PartsSkeletonContainer/Parts/HeadAndTorso"]
-position = Vector2(430, 340)
+[node name="RightHand" type="Sprite2D" parent="PartsSkeletonContainer/Parts"]
+position = Vector2(43, 35)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_13wwv")
 
-[node name="LeftEye" type="Sprite2D" parent="PartsSkeletonContainer/Parts/HeadAndTorso"]
-position = Vector2(-60, -400)
+[node name="LeftEye" type="Sprite2D" parent="PartsSkeletonContainer/Parts"]
+position = Vector2(-6, -40)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_vnxs5")
 
-[node name="RightEye" type="Sprite2D" parent="PartsSkeletonContainer/Parts/HeadAndTorso"]
-position = Vector2(90, -400)
+[node name="RightEye" type="Sprite2D" parent="PartsSkeletonContainer/Parts"]
+position = Vector2(9, -40)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_vnxs5")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="PartsSkeletonContainer"]
@@ -44,3 +48,8 @@ position = Vector2(-47, 15)
 
 [node name="HandRight" type="Bone2D" parent="PartsSkeletonContainer/Skeleton2D/Base/Body"]
 position = Vector2(43, 18)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PartsSkeletonContainer/Skeleton2D/Base/Body/HandRight"]
+remote_path = NodePath("../../../../../Parts/RightHand")
+update_rotation = false
+update_scale = false
