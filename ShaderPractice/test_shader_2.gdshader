@@ -1,5 +1,5 @@
 shader_type spatial;
-uniform float alpha_input: hint_range(0.0, 1.0, 0.1);
+uniform float alpha_input: hint_range(0.0, 1.0, 0.1) = 1.0;
 
 void vertex() {
 }
@@ -15,10 +15,6 @@ void fragment() {
 	
 	ALBEDO = vec3(t, t, t);
 	ALPHA = alpha_input;
-	
-	if ( UV.y < 0.5 ) {
-		discard;
-	}
 }
 
 //void light() {
