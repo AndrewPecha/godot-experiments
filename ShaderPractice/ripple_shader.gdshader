@@ -1,7 +1,5 @@
 shader_type spatial;
 
-render_mode cull_disabled;
-
 uniform vec4 color_a: source_color;
 uniform vec4 color_b: source_color;
 
@@ -13,19 +11,17 @@ void fragment() {
 	//lerp is mix()
 	//vec2 t = vec2( cos( UV.x * TAU * 2.0 ) * .5 + .5, cos( UV.y * TAU * 2.0 ) * .5 + .5);
 	
-	if ( UV.y < 0.5 ) {
-		discard;
-	}
+	ALBEDO = vec3(UV.y, UV.x, 0);
 	
-	float xOffset = cos( UV.x * TAU * 8.0 ) * 0.01;
-	float t = cos(( UV.y + xOffset + ( TIME * .1 ) ) * TAU * 5.0) * .5 + .5;
-	
-	//t = t * (1.0 - UV.y);
-	
-	vec4 gradient = mix(color_a, color_b, t);
-	
-	ALBEDO = gradient.xyz;
-	ALPHA = gradient.a;
+	//float xOffset = cos( UV.x * TAU * 8.0 ) * 0.01;
+	//float t = cos(( UV.y + xOffset + ( TIME * .1 ) ) * TAU * 5.0) * .5 + .5;
+	//
+	////t = t * (1.0 - UV.y);
+	//
+	//vec4 gradient = mix(color_a, color_b, t);
+	//
+	//ALBEDO = gradient.xyz;
+	//ALPHA = gradient.a;
 }
 
 //void light() {

@@ -15,6 +15,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.692383)
 material_override = SubResource("StandardMaterial3D_5psev")
 mesh = ExtResource("2_y0xab")
 
+[node name="Ripple" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28833, 0, 0.207089)
+mesh = ExtResource("2_y0xab")
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.616266, 0.787538, 0, -0.787538, 0.616266, 0, 1.694, 1.17303)
 
