@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv3kcwvg7tkpq"]
+
+[ext_resource type="Material" uid="uid://d1c52d5l4rn8r" path="res://ShaderPractice/test_shader_material.tres" id="1_dyssm"]
+[ext_resource type="ArrayMesh" uid="uid://dl46x35j8q4mi" path="res://ShaderPractice/assets/plane-blank_Plane.res" id="2_y0xab"]
+
+[node name="World" type="Node3D"]
+
+[node name="Plane-blankPlane" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_dyssm")
+mesh = ExtResource("2_y0xab")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.616266, 0.787538, 0, -0.787538, 0.616266, 0, 1.694, 1.17303)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0425906, 0.999093, 0, -0.999093, 0.0425906, 0, 8.1787, 0.10891)
