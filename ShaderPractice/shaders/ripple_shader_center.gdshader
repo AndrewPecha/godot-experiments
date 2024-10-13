@@ -1,5 +1,4 @@
 shader_type spatial;
-render_mode world_vertex_coords;
 
 uniform vec4 color_a: source_color;
 uniform vec4 color_b: source_color;
