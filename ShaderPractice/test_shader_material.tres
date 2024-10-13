@@ -5,4 +5,5 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_ut2rn")
-shader_parameter/alpha_input = 1.0
+shader_parameter/color_a = Color(0, 0.615686, 0.843137, 1)
+shader_parameter/color_b = Color(0.670588, 0.0117647, 0.831373, 1)
