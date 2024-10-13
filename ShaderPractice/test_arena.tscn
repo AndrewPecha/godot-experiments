@@ -61,7 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 0.616266, 0.787538, 0, -0.787538, 0.616266, 
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0425906, 0.999093, 0, -0.999093, 0.0425906, 0, 8.1787, 0.10891)
-light_energy = 0.172
 
 [node name="Smoke" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.01076, 0, 0, 0, -1.01076, 8.83637e-08, 0, -8.83637e-08, -1.01076, 0, 0, 0)
@@ -78,6 +77,5 @@ visible = false
 mesh = SubResource("PlaneMesh_m63da")
 
 [node name="DisplacementHearts" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0121185, 0.00593394, -0.0056532)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
