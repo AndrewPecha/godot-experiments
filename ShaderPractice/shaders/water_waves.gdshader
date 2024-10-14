@@ -26,7 +26,7 @@ void fragment() {
 	//multiply TIME by time_factor to slow down the animation
 	
 	//input = (.2, .2)
-	float time_factor = 0.1;
+	float time_factor = .05;
 	vec2 noise_uv = UV + TIME * time_factor;
 	//noise_uv = (.2, .2) + 1.0 * 0.1 == (.3, .3)
 	
@@ -40,6 +40,7 @@ void fragment() {
 	
 	//base_UV offsets where we read the texture from
 	//the offset is greater in areas with white for the distortion texture
+	//we use a distortion_factor here between 0 and 1 to reduce how far away we read.
 	//base_uv = (.2, .2) + ((1, -1) * .2)
 	//base_uv = (.2, .2) + (.2, -.2)
 	//base_uv = (.4, 0)
