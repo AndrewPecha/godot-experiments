@@ -22,12 +22,31 @@ void vertex() {
 }
 
 void fragment() {
-	vec2 noise_uv = UV + TIME * .1;
-	vec2 noise = vec2(texture(distortion_sampler, noise_uv).xx);
-	vec2 base_uv = UV + noise * distortion_factor;
+	//choose a uv based on how much TIME has passed
+	//multiply TIME by time_factor to slow down the animation
+	
+	//input = (.2, .2)
+	float time_factor = 0.1;
+	vec2 noise_uv = UV + TIME * time_factor;
+	//noise_uv = (.2, .2) + 1.0 * 0.1 == (.3, .3)
+	
+	
+	//read from the distortion_sample using the UV chosen with our calculation above
+	//black on the distortion sampler will return 0
+	//white on the distortion sampler will return 1 
+	//noise_value = ((value of color.x at (.2, .2)), -(value of color.x at (.2, .2)))
+	//noise_value = (1, -1)
+	vec2 noise_value = vec2(texture(distortion_sampler, noise_uv).x, -texture(distortion_sampler, noise_uv).x);
+	
+	//base_UV offsets where we read the texture from
+	//the offset is greater in areas with white for the distortion texture
+	//base_uv = (.2, .2) + ((1, -1) * .2)
+	//base_uv = (.2, .2) + (.2, -.2)
+	//base_uv = (.4, 0)
+	vec2 base_uv = UV + noise_value * distortion_factor;
 	ALBEDO = texture(texture_sampler, base_uv).xyz;
 	
-	//ALBEDO = texture(texture_sampler, UV).xyz;
+	//ALBEDO = vec3(base_uv, 0);
 }
 
 //void light() {

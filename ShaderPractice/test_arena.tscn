@@ -1,12 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cv3kcwvg7tkpq"]
+[gd_scene load_steps=13 format=3 uid="uid://cv3kcwvg7tkpq"]
 
 [ext_resource type="Material" uid="uid://d1c52d5l4rn8r" path="res://ShaderPractice/test_shader_material.tres" id="1_dyssm"]
 [ext_resource type="ArrayMesh" uid="uid://dl46x35j8q4mi" path="res://ShaderPractice/assets/plane-blank_Plane.res" id="2_y0xab"]
 [ext_resource type="Shader" path="res://ShaderPractice/shaders/ripple_shader.gdshader" id="3_61s7w"]
 [ext_resource type="Shader" path="res://ShaderPractice/shaders/ripple_shader_center.gdshader" id="4_e5sfi"]
-[ext_resource type="Shader" path="res://ShaderPractice/shaders/water_waves.gdshader" id="5_xxn8n"]
-[ext_resource type="Texture2D" uid="uid://c0i6kgooxgqlx" path="res://ShaderPractice/assets/damien-ramirez-cg-2.jpg" id="6_tx6a3"]
-[ext_resource type="Texture2D" uid="uid://coeghlnh8ruih" path="res://ShaderPractice/assets/tropical-blue-sea-top-view-ocean-background-illustration-vector-VECTEEZY.jpg" id="7_nooi1"]
+[ext_resource type="Material" uid="uid://bdm5cmu4x77l6" path="res://ShaderPractice/water_shimmer.tres" id="5_7scqm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5psev"]
 albedo_color = Color(0.261426, 0.156239, 0.0575023, 1)
@@ -35,16 +33,9 @@ material = SubResource("ShaderMaterial_ugdqt")
 subdivide_width = 50
 subdivide_depth = 50
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_da0ur"]
-render_priority = 0
-shader = ExtResource("5_xxn8n")
-shader_parameter/height_scale = 0.5
-shader_parameter/distortion_factor = 0.03
-shader_parameter/distortion_sampler = ExtResource("6_tx6a3")
-shader_parameter/texture_sampler = ExtResource("7_nooi1")
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_hh44l"]
-material = SubResource("ShaderMaterial_da0ur")
+lightmap_size_hint = Vector2i(12, 12)
+material = ExtResource("5_7scqm")
 subdivide_width = 50
 subdivide_depth = 50
 
