@@ -3,13 +3,13 @@ shader_type spatial;
 uniform float height_scale = 0.05;
 uniform sampler2D distortion_sampler;
 uniform sampler2D texture_sampler;
-uniform float distortion_factor: hint_range(0.0, 1.0, 0.05) = 0.5;
+uniform float distortion_factor: hint_range(0.0, 1.0, 0.01) = 0.5;
 
 varying vec2 tex_position;
 
 void vertex() {
-	vec4 displace = texture(distortion_sampler, UV);
-	vec3 new_vertex = vec3(0, displace.y * .05 , 0) + VERTEX;
+	//vec4 displace = texture(distortion_sampler, UV);
+	//vec3 new_vertex = vec3(0, displace.y * .05 , 0) + VERTEX;
 	//
 	//VERTEX = new_vertex;
 	//NORMAL = new_vertex;
