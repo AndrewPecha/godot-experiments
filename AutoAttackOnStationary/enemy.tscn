@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cctohp1mfm0ee"]
 
-[ext_resource type="Script" path="res://AutoAttackOnStationary/enemy.gd" id="1_660fn"]
+[ext_resource type="Script" uid="uid://sslr7bdtff1n" path="res://AutoAttackOnStationary/enemy.gd" id="1_660fn"]
 [ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="1_blp2c"]
 [ext_resource type="PackedScene" uid="uid://db5fx23iatn17" path="res://AutoAttackOnStationary/enemy_projectile.tscn" id="2_83j2q"]
 [ext_resource type="PackedScene" uid="uid://ck5vyi4a7rphd" path="res://AutoAttackOnStationary/health_bar.tscn" id="3_6axgj"]

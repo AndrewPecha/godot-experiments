@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqiou4qseuill"]
 
-[ext_resource type="Script" path="res://BulletHellper/projectile.gd" id="1_rtn44"]
+[ext_resource type="Script" uid="uid://dq6mdv7vm7v1k" path="res://BulletHellper/projectile.gd" id="1_rtn44"]
 [ext_resource type="Texture2D" uid="uid://cbc4uf3c4jjnf" path="res://Sprites/Projectile.png" id="2_xj8dn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rn3a"]

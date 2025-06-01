@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://n5yen0suvjv8"]
 
 [ext_resource type="ArrayMesh" uid="uid://7pwoupf0n7j5" path="res://IsometricTapRpg/Cube.obj" id="1_5u3v8"]
-[ext_resource type="Script" path="res://IsometricTapRpg/healer.gd" id="2_s3khg"]
+[ext_resource type="Script" uid="uid://dplbiuv0gnm4p" path="res://IsometricTapRpg/healer.gd" id="2_s3khg"]
 [ext_resource type="PackedScene" uid="uid://bmgib3x0hovxf" path="res://IsometricTapRpg/placeholder_projectile.tscn" id="3_nsfrh"]
-[ext_resource type="Script" path="res://IsometricTapRpg/movement.gd" id="4_l0625"]
+[ext_resource type="Script" uid="uid://pjvcrgo1dlg1" path="res://IsometricTapRpg/movement.gd" id="4_l0625"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxiuy"]
 albedo_color = Color(0.389865, 0.25768, 0.0745894, 1)

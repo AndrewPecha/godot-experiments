@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://eiktb61u2fyp"]
 
-[ext_resource type="Script" path="res://AutoAttackOnStationary/player.gd" id="1_vt5ix"]
+[ext_resource type="Script" uid="uid://s1al50mxngrx" path="res://AutoAttackOnStationary/player.gd" id="1_vt5ix"]
 [ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="2_diygd"]
 [ext_resource type="PackedScene" uid="uid://c1n8lsep2fvcs" path="res://weapon_1.tscn" id="4_kahua"]
 [ext_resource type="PackedScene" uid="uid://ck5vyi4a7rphd" path="res://AutoAttackOnStationary/health_bar.tscn" id="5_52tlh"]

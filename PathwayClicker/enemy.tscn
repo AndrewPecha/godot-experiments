@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cb47128cktsve"]
 
-[ext_resource type="Script" path="res://PathwayClicker/enemy.gd" id="1_7tsjg"]
+[ext_resource type="Script" uid="uid://ctj1dwjoljhwv" path="res://PathwayClicker/enemy.gd" id="1_7tsjg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rksiu"]
 

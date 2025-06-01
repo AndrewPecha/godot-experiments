@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bq0gllolh3vi5"]
 
-[ext_resource type="Script" path="res://DragSnap/snap_socket.gd" id="1_6l2uj"]
-[ext_resource type="Script" path="res://DragSnap/snap_socket_perimeter.gd" id="2_0v2xe"]
-[ext_resource type="Script" path="res://DragSnap/snap.gd" id="2_8sbkg"]
+[ext_resource type="Script" uid="uid://dqh2wcdk5xfl8" path="res://DragSnap/snap_socket.gd" id="1_6l2uj"]
+[ext_resource type="Script" uid="uid://c1roen8wundrp" path="res://DragSnap/snap_socket_perimeter.gd" id="2_0v2xe"]
+[ext_resource type="Script" uid="uid://dc5ihy4iybsiu" path="res://DragSnap/snap.gd" id="2_8sbkg"]
 [ext_resource type="Texture2D" uid="uid://cbc4uf3c4jjnf" path="res://Sprites/Projectile.png" id="3_omw6d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kv16b"]

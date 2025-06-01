@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1n8lsep2fvcs"]
 
 [ext_resource type="Texture2D" uid="uid://4hg6uojcykiq" path="res://Sprites/Weapon.png" id="1_1idp4"]
-[ext_resource type="Script" path="res://AutoAttackOnStationary/weapon_1.gd" id="2_7jua2"]
+[ext_resource type="Script" uid="uid://brhoew5c5ny7a" path="res://AutoAttackOnStationary/weapon_1.gd" id="2_7jua2"]
 [ext_resource type="PackedScene" uid="uid://c86gmxe8gj6d2" path="res://AutoAttackOnStationary/projectile.tscn" id="3_7rl0b"]
 
 [node name="Weapon1" type="Sprite2D"]

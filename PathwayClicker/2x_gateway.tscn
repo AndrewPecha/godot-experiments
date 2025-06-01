@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c2errvxpnu4ug"]
 
-[ext_resource type="Script" path="res://PathwayClicker/2x_gateway.gd" id="1_gi6eo"]
+[ext_resource type="Script" uid="uid://crru2vyrni58s" path="res://PathwayClicker/2x_gateway.gd" id="1_gi6eo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_00cov"]
 size = Vector3(1.47, 0.725, 0.07)

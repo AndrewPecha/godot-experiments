@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://bg2yed6ebe14v"]
 
 [ext_resource type="PackedScene" uid="uid://c2errvxpnu4ug" path="res://PathwayClicker/2x_gateway.tscn" id="1_fhobq"]
-[ext_resource type="Script" path="res://PathwayClicker/click_spawner.gd" id="1_wo05p"]
+[ext_resource type="Script" uid="uid://ccsvpxssk4nyq" path="res://PathwayClicker/click_spawner.gd" id="1_wo05p"]
 [ext_resource type="PackedScene" uid="uid://dcl8ke4gt47p0" path="res://PathwayClicker/friendly.tscn" id="2_kx8yt"]
-[ext_resource type="Script" path="res://PathwayClicker/pathway_end_detector.gd" id="3_i6c6y"]
-[ext_resource type="Script" path="res://PathwayClicker/enemy_spawner.gd" id="4_bwxsn"]
+[ext_resource type="Script" uid="uid://lbgmru2h4dof" path="res://PathwayClicker/pathway_end_detector.gd" id="3_i6c6y"]
+[ext_resource type="Script" uid="uid://dgyca0r3tm2mh" path="res://PathwayClicker/enemy_spawner.gd" id="4_bwxsn"]
 [ext_resource type="PackedScene" uid="uid://cb47128cktsve" path="res://PathwayClicker/enemy.tscn" id="5_x77tr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3qmqo"]

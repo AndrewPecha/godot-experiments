@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bdm5cmu4x77l6"]
 
-[ext_resource type="Shader" path="res://ShaderPractice/shaders/water_waves.gdshader" id="1_acdmf"]
+[ext_resource type="Shader" uid="uid://b6j3jb5dr2amr" path="res://ShaderPractice/shaders/water_waves.gdshader" id="1_acdmf"]
 [ext_resource type="Texture2D" uid="uid://c0i6kgooxgqlx" path="res://ShaderPractice/assets/damien-ramirez-cg-2.jpg" id="2_8kxqg"]
 [ext_resource type="Texture2D" uid="uid://coeghlnh8ruih" path="res://ShaderPractice/assets/tropical-blue-sea-top-view-ocean-background-illustration-vector-VECTEEZY.jpg" id="3_2qyfc"]
 
@@ -8,6 +8,6 @@
 render_priority = 0
 shader = ExtResource("1_acdmf")
 shader_parameter/height_scale = 0.05
-shader_parameter/distortion_factor = 0.11
 shader_parameter/distortion_sampler = ExtResource("2_8kxqg")
 shader_parameter/texture_sampler = ExtResource("3_2qyfc")
+shader_parameter/distortion_factor = 0.11

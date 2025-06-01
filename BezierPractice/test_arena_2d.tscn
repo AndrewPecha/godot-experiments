@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://coao4efc6tnej"]
 
-[ext_resource type="Script" path="res://BezierPractice/player.gd" id="1_o4lk7"]
+[ext_resource type="Script" uid="uid://bw4o4r6gthgjv" path="res://BezierPractice/player.gd" id="1_o4lk7"]
 [ext_resource type="PackedScene" uid="uid://dcq7tn7t7yhtk" path="res://BezierPractice/marker.tscn" id="2_0siep"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nnwku"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4jd0u3es1x4"]
 
-[ext_resource type="Script" path="res://AutoAttackOnStationary/redo_button.gd" id="1_djc5a"]
+[ext_resource type="Script" uid="uid://d1tav00ks2tsg" path="res://AutoAttackOnStationary/redo_button.gd" id="1_djc5a"]
 
 [node name="DeathScene" type="Control"]
 layout_mode = 3

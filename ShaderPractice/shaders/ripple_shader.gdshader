@@ -6,7 +6,7 @@ uniform vec4 color_b: source_color;
 
 void vertex() {
 	float wave = cos( (UV.y - TIME * .1) * TAU * 5.0 );
-	VERTEX.y = wave * .051;
+	VERTEX.y = wave * .05;
 	
 	//NORMAL = MODEL_NORMAL_MATRIX * NORMAL;
 }

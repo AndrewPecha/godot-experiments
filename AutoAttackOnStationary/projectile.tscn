@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c86gmxe8gj6d2"]
 
-[ext_resource type="Script" path="res://AutoAttackOnStationary/projectile.gd" id="1_blb2e"]
+[ext_resource type="Script" uid="uid://5vpuuqktj3qe" path="res://AutoAttackOnStationary/projectile.gd" id="1_blb2e"]
 [ext_resource type="Texture2D" uid="uid://cbc4uf3c4jjnf" path="res://Sprites/Projectile.png" id="2_jl7po"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rn3a"]

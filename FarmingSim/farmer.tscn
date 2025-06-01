@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cf44871pa2nn8"]
 
-[ext_resource type="Script" path="res://FarmingSim/farmer.gd" id="1_or1fb"]
+[ext_resource type="Script" uid="uid://byo7mk4ib7o02" path="res://FarmingSim/farmer.gd" id="1_or1fb"]
 [ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="1_qgtmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krarh"]
@@ -83,10 +83,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xkpog"]
 _data = {
-"RESET": SubResource("Animation_qn8l3"),
-"hoe": SubResource("Animation_4k04r"),
-"scythe": SubResource("Animation_qwn0i"),
-"water": SubResource("Animation_2wmc1")
+&"RESET": SubResource("Animation_qn8l3"),
+&"hoe": SubResource("Animation_4k04r"),
+&"scythe": SubResource("Animation_qwn0i"),
+&"water": SubResource("Animation_2wmc1")
 }
 
 [node name="Farmer" type="CharacterBody2D"]

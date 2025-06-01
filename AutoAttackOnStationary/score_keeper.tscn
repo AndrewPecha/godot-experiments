@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ynhkq08gbief"]
 
-[ext_resource type="Script" path="res://AutoAttackOnStationary/score_keeper.gd" id="1_fsudr"]
+[ext_resource type="Script" uid="uid://dlauieds8gy2m" path="res://AutoAttackOnStationary/score_keeper.gd" id="1_fsudr"]
 
 [node name="ScoreKeeper" type="Control"]
 layout_mode = 3

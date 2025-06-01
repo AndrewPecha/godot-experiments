@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dx4o7saycu71c" path="res://icon.svg" id="1_6qnd6"]
 [ext_resource type="Texture2D" uid="uid://bbguu825tlhwu" path="res://Sprites/gator.png" id="2_icv2k"]
-[ext_resource type="Script" path="res://2Point5DRotation/gator.gd" id="2_yg2k6"]
+[ext_resource type="Script" uid="uid://c6g8kwsj55tqu" path="res://2Point5DRotation/gator.gd" id="2_yg2k6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_780cm"]
 size = Vector3(0.413055, 0.467499, 0.392212)

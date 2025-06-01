@@ -2,8 +2,8 @@
 
 [ext_resource type="Material" uid="uid://d1c52d5l4rn8r" path="res://ShaderPractice/test_shader_material.tres" id="1_dyssm"]
 [ext_resource type="ArrayMesh" uid="uid://dl46x35j8q4mi" path="res://ShaderPractice/assets/plane-blank_Plane.res" id="2_y0xab"]
-[ext_resource type="Shader" path="res://ShaderPractice/shaders/ripple_shader.gdshader" id="3_61s7w"]
-[ext_resource type="Shader" path="res://ShaderPractice/shaders/ripple_shader_center.gdshader" id="4_e5sfi"]
+[ext_resource type="Shader" uid="uid://du35muv3yo4ae" path="res://ShaderPractice/shaders/ripple_shader.gdshader" id="3_61s7w"]
+[ext_resource type="Shader" uid="uid://b2nend0nxqeki" path="res://ShaderPractice/shaders/ripple_shader_center.gdshader" id="4_e5sfi"]
 [ext_resource type="Material" uid="uid://bdm5cmu4x77l6" path="res://ShaderPractice/water_shimmer.tres" id="5_7scqm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5psev"]
@@ -14,8 +14,8 @@ albedo_color = Color(0.261426, 0.156239, 0.0575023, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_44161"]
 render_priority = 0
 shader = ExtResource("3_61s7w")
-shader_parameter/color_a = null
-shader_parameter/color_b = null
+shader_parameter/color_a = Color(0, 0, 0, 1)
+shader_parameter/color_b = Color(0, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bai4u"]
 material = SubResource("ShaderMaterial_44161")
@@ -25,8 +25,8 @@ subdivide_depth = 50
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ugdqt"]
 render_priority = 0
 shader = ExtResource("4_e5sfi")
-shader_parameter/color_a = null
-shader_parameter/color_b = null
+shader_parameter/color_a = Color(0, 0, 0, 1)
+shader_parameter/color_b = Color(0, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m63da"]
 material = SubResource("ShaderMaterial_ugdqt")
@@ -54,17 +54,16 @@ transform = Transform3D(1, 0, 0, 0, 0.139933, 0.990161, 0, -0.990161, 0.139933, 
 transform = Transform3D(1, 0, 0, 0, 0.0425906, 0.999093, 0, -0.999093, 0.0425906, 0, 8.1787, 0.10891)
 
 [node name="Smoke" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.01076, 0, 0, 0, -1.01076, 8.83637e-08, 0, -8.83637e-08, -1.01076, 0, 0, 0)
-visible = false
+transform = Transform3D(1.01076, 0, 0, 0, -1.01076, 8.83637e-08, 0, -8.83637e-08, -1.01076, -10, 0, 3)
 material_override = ExtResource("1_dyssm")
 mesh = SubResource("SphereMesh_o1gum")
 
 [node name="Ripple2" type="MeshInstance3D" parent="."]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 mesh = SubResource("PlaneMesh_bai4u")
 
 [node name="RippleCenter" type="MeshInstance3D" parent="."]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 2)
 mesh = SubResource("PlaneMesh_m63da")
 
 [node name="WaterShimmer" type="MeshInstance3D" parent="."]
