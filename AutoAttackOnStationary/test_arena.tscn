@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuo52n530t3r0"]
+[gd_scene load_steps=7 format=3 uid="uid://cuo52n530t3r0"]
 
 [ext_resource type="Script" uid="uid://ymrep8swb4eb" path="res://AutoAttackOnStationary/world.gd" id="1_bgbnt"]
 [ext_resource type="PackedScene" uid="uid://eiktb61u2fyp" path="res://AutoAttackOnStationary/player.tscn" id="1_v1i2d"]
 [ext_resource type="PackedScene" uid="uid://cctohp1mfm0ee" path="res://AutoAttackOnStationary/enemy.tscn" id="2_3qsho"]
 [ext_resource type="PackedScene" uid="uid://c4jd0u3es1x4" path="res://AutoAttackOnStationary/death_scene.tscn" id="4_3ye4l"]
 [ext_resource type="PackedScene" uid="uid://ynhkq08gbief" path="res://AutoAttackOnStationary/score_keeper.tscn" id="5_20ojl"]
+[ext_resource type="PackedScene" uid="uid://c7n0gpgxukln2" path="res://AutoAttackOnStationary/weapon_selector.tscn" id="6_xk3p2"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_bgbnt")
@@ -27,3 +28,10 @@ offset_bottom = -1.0
 [node name="ScoreKeeper" parent="." instance=ExtResource("5_20ojl")]
 offset_left = 1147.0
 offset_right = 1147.0
+
+[node name="WeaponSelector" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_xk3p2")]
+offset_left = 1141.0
+offset_top = 12.0
+offset_right = 1141.0
+offset_bottom = 12.0
+player = NodePath("../Player")
