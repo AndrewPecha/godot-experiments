@@ -4,17 +4,16 @@
 [ext_resource type="Script" uid="uid://yb2fquvdmdvx" path="res://AutoAttackOnStationary/weapon_2.gd" id="2_j5mnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adtm8"]
-size = Vector2(798, 36)
+size = Vector2(258, 36)
 
 [node name="Weapon2" type="Area2D"]
-position = Vector2(399, 0)
 script = ExtResource("2_j5mnc")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(131, 0)
 shape = SubResource("RectangleShape2D_adtm8")
 
 [node name="Weapon2" type="Sprite2D" parent="."]
 texture_filter = 3
-scale = Vector2(3.11719, 1)
+position = Vector2(130, -1)
 texture = ExtResource("1_3qxgx")

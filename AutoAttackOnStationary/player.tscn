@@ -34,7 +34,8 @@ texture = ExtResource("2_diygd")
 shape = SubResource("RectangleShape2D_3mtdv")
 
 [node name="Weapon" parent="." instance=ExtResource("4_kahua")]
-
-[node name="Weapon2" parent="." instance=ExtResource("5_j7534")]
 process_mode = 4
 visible = false
+
+[node name="Weapon2" parent="." instance=ExtResource("5_j7534")]
+position = Vector2(40, 0)
