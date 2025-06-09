@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://objaupkmawmi"]
+
+[node name="InventorySlot" type="PanelContainer"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 40.0
+offset_bottom = 40.0
