@@ -1,9 +1,9 @@
 extends Node2D
+class_name BhSpawner
 
 @export var projectile: PackedScene
-
 @export var rotate_self: bool = true
-@export var shoot_cooldown_timeout: float = 1.0
+@export var shoot_cooldown_timeout: float = 0.1
 @export var shot_direction: Vector2 = Vector2.RIGHT
 var shoot_cooldown_counter: float = 0
 
