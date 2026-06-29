@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv3kcwvg7tkpq"]
+[gd_scene format=3 uid="uid://cv3kcwvg7tkpq"]
 
 [ext_resource type="Material" uid="uid://d1c52d5l4rn8r" path="res://ShaderPractice/test_shader_material.tres" id="1_dyssm"]
 [ext_resource type="ArrayMesh" uid="uid://dl46x35j8q4mi" path="res://ShaderPractice/assets/plane-blank_Plane.res" id="2_y0xab"]
@@ -39,129 +39,129 @@ material = ExtResource("5_7scqm")
 subdivide_width = 50
 subdivide_depth = 50
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" unique_id=1722106993]
 
-[node name="Floor" type="MeshInstance3D" parent="."]
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=241155676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.692383)
 visible = false
 material_override = SubResource("StandardMaterial3D_5psev")
 mesh = ExtResource("2_y0xab")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1163485646]
 transform = Transform3D(1, 0, 0, 0, 0.139933, 0.990161, 0, -0.990161, 0.139933, 0, 1.694, 1.17303)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1010337405]
 transform = Transform3D(1, 0, 0, 0, 0.0425906, 0.999093, 0, -0.999093, 0.0425906, 0, 8.1787, 0.10891)
 
-[node name="Smoke" type="MeshInstance3D" parent="."]
+[node name="Smoke" type="MeshInstance3D" parent="." unique_id=7740727]
 transform = Transform3D(1.01076, 0, 0, 0, -1.01076, 8.83637e-08, 0, -8.83637e-08, -1.01076, -10, 0, 3)
 material_override = ExtResource("1_dyssm")
 mesh = SubResource("SphereMesh_o1gum")
 
-[node name="Ripple2" type="MeshInstance3D" parent="."]
+[node name="Ripple2" type="MeshInstance3D" parent="." unique_id=1542077199]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 mesh = SubResource("PlaneMesh_bai4u")
 
-[node name="RippleCenter" type="MeshInstance3D" parent="."]
+[node name="RippleCenter" type="MeshInstance3D" parent="." unique_id=839203421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 2)
 mesh = SubResource("PlaneMesh_m63da")
 
-[node name="WaterShimmer" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer" type="MeshInstance3D" parent="." unique_id=199128208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0615208, -0.021525, -0.00149626)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer2" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer2" type="MeshInstance3D" parent="." unique_id=2017919738]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06152, -0.021525, -0.00149626)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer3" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer3" type="MeshInstance3D" parent="." unique_id=1202947094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06152, -0.021525, 1.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer4" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer4" type="MeshInstance3D" parent="." unique_id=2028321124]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0615208, -0.021525, 1.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer5" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer5" type="MeshInstance3D" parent="." unique_id=747259487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93848, -0.021525, 1.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer6" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer6" type="MeshInstance3D" parent="." unique_id=11757666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93848, -0.021525, -0.00149632)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer7" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer7" type="MeshInstance3D" parent="." unique_id=576928216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93848, -0.021525, -2.0015)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer8" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer8" type="MeshInstance3D" parent="." unique_id=1345321262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0615208, -0.021525, -2.0015)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer9" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer9" type="MeshInstance3D" parent="." unique_id=1633936812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06152, -0.021525, -2.0015)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer10" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer10" type="MeshInstance3D" parent="." unique_id=845128057]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06152, -0.021525, -2.0015)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer11" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer11" type="MeshInstance3D" parent="." unique_id=131476220]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06152, -0.021525, -0.00149632)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer12" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer12" type="MeshInstance3D" parent="." unique_id=1771908425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06152, -0.021525, 1.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer13" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer13" type="MeshInstance3D" parent="." unique_id=393071874]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06152, -0.021525, 3.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer14" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer14" type="MeshInstance3D" parent="." unique_id=1311714609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06152, -0.021525, 3.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer15" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer15" type="MeshInstance3D" parent="." unique_id=868586151]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0615206, -0.021525, 3.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer16" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer16" type="MeshInstance3D" parent="." unique_id=1135642610]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93848, -0.021525, 3.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer17" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer17" type="MeshInstance3D" parent="." unique_id=67967030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93848, -0.021525, 3.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer18" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer18" type="MeshInstance3D" parent="." unique_id=1455208691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93848, -0.021525, 1.9985)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer19" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer19" type="MeshInstance3D" parent="." unique_id=155530745]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93848, -0.021525, -0.00149632)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
 
-[node name="WaterShimmer20" type="MeshInstance3D" parent="."]
+[node name="WaterShimmer20" type="MeshInstance3D" parent="." unique_id=272964454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93848, -0.021525, -2.0015)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_hh44l")
