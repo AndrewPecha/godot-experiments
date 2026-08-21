@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://3ra2e8t35nt0"]
+
+[ext_resource type="Texture2D" uid="uid://cwb54lqjoisil" path="res://WillowTilemap/image0.jpg" id="1_lf15j"]
+[ext_resource type="Texture2D" uid="uid://bt70mmcajvjkn" path="res://WillowTilemap/CauldronKeeperModified.png" id="2_ex528"]
+[ext_resource type="Texture2D" uid="uid://d1rl76gghl8e6" path="res://WillowTilemap/CauldronKeeperTitle.jpg" id="3_tpdj6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ex528"]
+texture = ExtResource("1_lf15j")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ostoq"]
+sources/0 = SubResource("TileSetAtlasSource_ex528")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpdj6"]
+atlas = ExtResource("2_ex528")
+region = Rect2(0, 472, 678, 608)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ostoq"]
+atlas = ExtResource("2_ex528")
+region = Rect2(26, 150, 78, 72)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ex528"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(26.9, 1, 1)
+angle_min = -89.99999
+angle_max = 90.000015
+direction = Vector3(0, -1, 0)
+spread = 17.07
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.39999998
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajtct"]
+atlas = ExtResource("3_tpdj6")
+region = Rect2(923, 272, 835, 543)
+
+[node name="TestArena" type="Node2D" unique_id=1451774618]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=298432118]
+offset_right = 1151.0
+offset_bottom = 660.0
+color = Color(0, 0, 0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1422576693]
+tile_set = SubResource("TileSet_ostoq")
+
+[node name="CauldronKeeperModified" type="Sprite2D" parent="." unique_id=511439287]
+position = Vector2(229.00002, 322)
+scale = Vector2(0.4934212, 0.49342108)
+texture = SubResource("AtlasTexture_tpdj6")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CauldronKeeperModified" unique_id=865805553]
+position = Vector2(-6.333252, -240.66675)
+scale = Vector2(6.3333325, 6.3333335)
+texture = SubResource("AtlasTexture_ostoq")
+process_material = SubResource("ParticleProcessMaterial_ex528")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=824027461]
+position = Vector2(713, 295)
+scale = Vector2(0.76933694, 0.769337)
+texture = SubResource("AtlasTexture_ajtct")
